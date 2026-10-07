@@ -2,25 +2,6 @@ using UnityEngine;
 
 public enum ShapeType { Cube, Sphere }
 
-//  final Product
-public class ShapeItem : MonoBehaviour
-{
-    public ShapeType type;
-    public float perfectness;
-    public float marketValue;
-}
-
-//  Builder Interface
-public interface IShapeBuilder
-{
-    void SetBaseShape(ShapeType type);
-    void SetPerfectness(float percentage);
-    void ApplyDistortion();
-    void CalculateBaseValue(Difficulty diff);
-    ShapeItem GetShape();
-}
-
-// Builder
 public class ProceduralShapeBuilder : IShapeBuilder
 {
     private GameObject shapeGO;
